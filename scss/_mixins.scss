@@ -1,0 +1,77 @@
+@use './variables' as v;
+
+@mixin flex-center($direction) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+@mixin gradient-bg($color1, $color2){
+    background: linear-gradient(to left top, $color1, $color2);
+}
+
+@mixin gradient-text($color1, $color2){
+    background: linear-gradient(to left, $color1, $color2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline;
+}
+
+
+@mixin cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #353535;
+    font-size: 1rem;
+    color: white;
+    box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem, rgba(2,8,20,0.1) 0px 0.075rem 0.175rem;
+    height: 100%;
+    width: 90%;
+    border-radius: 4px;
+    transition: all 500ms;
+    overflow: hidden;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+@mixin addshadow {
+    box-shadow: 0px 10px 10px rgba(0,0,0,0.2),
+                0px 10px 40px rgba(0,0,0,0.2);
+}
+
+@mixin btn($bgcolor, $bgcolor2, $txtcolor) {
+    //background-color: $bgcolor; 
+    @include gradient-bg($bgcolor, $bgcolor2); 
+    border: none;
+    color: $txtcolor;
+    padding: 1rem 2rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    border-radius: 4px;
+}
+
+@mixin set-progressbar($color, $progress){
+    .progress {
+        border-radius: 4px;
+        width: 80%;
+        width: 25vw;
+        border:1px solid rgba(75, 75, 75, 0.5);
+        height: 1.6rem;
+    }
+
+    .progress__bar {
+        border-radius: 4px;
+        height: 100%;
+        width: $progress;
+        @include gradient-bg($color, v.$accent-secondary);
+        @include addshadow();
+    }
+}
+

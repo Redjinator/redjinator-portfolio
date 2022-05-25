@@ -1,0 +1,77 @@
+@keyframes flipUp {
+    from {transform: rotateX(180deg);}
+    to {transform: rotateX(0deg); color: red;}
+}
+@keyframes speedFlip {
+    from {transform: rotateX(180deg);}
+    to {transform: rotateX(0deg);}
+}
+
+@mixin speedflip {
+    display: inline-block;
+    transform-origin: 100% 100%;
+    animation: flipUp 1s alternate infinite both;
+}
+
+@mixin increment-delays(){
+    @for $i from 1 through 8 {
+        &:nth-child(8n + #{$i}) {
+            animation-delay: $i * 0.2s;
+        }
+    }
+}
+
+/* Clouds */
+//---------------------------------------------
+
+
+@mixin addcloud($size, $sec) {
+    @keyframes float {
+        0% {
+            transform: translateX(0%);
+        }
+        100% {
+            transform: translateX(50%);
+        }
+    }
+
+    background-image: url("../images/cloud01.svg");
+    background-size: $size;
+    background-repeat: no-repeat;
+    animation: float $sec linear infinite;
+    height: 10rem;
+    width: 20rem;
+}
+
+
+
+
+
+
+/* SVG of my face
+/*=====================================================================*/
+@mixin back_n_forth {
+    @keyframes backAndForth {
+        0% {
+            transform: translateX(0%);
+        }
+        100% {
+            transform: translateX(50%);
+        }
+    }
+
+    color: #fff;
+    overflow: hidden;
+    animation-name: backAndForth;
+    animation-duration: 1s;
+    animation-fill-mode: backwards;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+
+    & img {
+        width: 100px;
+        margin-bottom: 2rem;
+    }
+}
+

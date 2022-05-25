@@ -1,231 +1,360 @@
 <!DOCTYPE html>
 <html lang="en">
 <!--
-    student:    Reginald McPherson
-    modified:   25 May, 2022
-    course:     DGL-203
-    instructor: Megan Wilson
-
-    file:       index.html
+    Student:    Reginald McPherson
+    Course:     DGL-203 Adv. CSS
+    Modified:   07 Dec, 2021
+    Purpose:    Part of Assignment 4C
 -->
-  <head>
+<head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reginald McPherson Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet"> 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href="css/style.css">
-  </head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="scss/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap" rel="stylesheet"/>
+    <script src="https://kit.fontawesome.com/32eac82685.js" crossorigin="anonymous"></script>
+    <title>CSS Final Portfolio</title>
+</head>
+<body>
 
+<!-- #region NAVIGATION -->
+<nav class="navbar navbar-expand-md bg-dark navbar-dark sticky-top">
 
-  <body>
-    <main>
-      <nav class="navbar">
-
-      </nav>
-      <div class="dropdown">
-        <button class="dropdown-hover">Navigation</button>
-        <div class="dropdown-menu">
-          <a href="#About">About</a>
-          <a href="#projects">Projects</a>
-          <a href="#work-experience">Work</a>
-          <a href="#education">Education</a>
-          <a href="#contact">Contact</a>
-          <a href="#">Back to Top</a>
-        </div>
-      </div>
-      <!-- ***********************  ABOUT / PROFILE  *********************** -->
-      <header id="About">
-        <div class="content-wrap">
-          <h1>Reginald McPherson</h1>
-          <h2>Web Developer / Student</h2>
-          <p>Hello and Welcome to my portfolio. :)</p>
-          <p>In Sept 2019, I honorably retired from the Canadian Forces with the intention of pursuing a career as a developer. I am currently attending North Island College, a student of the Web & Mobile Application Development Diploma Program with an expected completion date of April 2023.</p>
-          <p>However, an employment opportunity to work as a junior developer would likely result in me spreading out my remaining courses, I am very eager to get back into the workforce.</p>
-
-        </div>
-      </header>
-
-      <!-- ********************  PROJECTS / PORTFOLIO  ********************* -->
-      <section class="projects" id="projects">
-        <div class="content-wrap divider">
-          <h2>Featured Projects</h2>
-          <p>This porfolio was unfinished due to my studies and related time constraints. However, I will update with some newer projects this week as I get time between job hunting. <a href="index.html">idonthaveenoughprojects.com</a>.</p>
+    <div class="container">
   
-          <!-- Start of Project block -->
-          <section class="project-item">
-            <img src="images/finalmockup.PNG" alt="Pet Adoption mobile app mock up">
-            <h3>Pet Adoption - Mobile App</h3>
-            <p>Created as part of "DGL-111 User Experience and Interface Design", covering topics like user testing, user personas, problem solving, wireframes, style guides, and mock ups using Adobe XD and Illustrator.</p>
-          </section>
-          <!-- End of Project block. -->
-          <!-- Start of Project block -->
-          <section class="project-item">
-            <img src="images/LHandH.PNG" alt="website showing an a webpage">
-            <h3>Daycare Website</h3>
-            <p>Created as part of "DGL-113 Intro to Javascript", this page featured the use of the HTML5 canvas and javascript to make bubbles appear in the background and also feature a basic image carosal.</p>
-          </section>
-          <!-- End of Project block. -->
-          <!-- Start of Project block -->
-          <section class="project-item">
-            <img src="images/ToasterHeroshot.png" alt="Hand drawn toaster with a digital display">
-            <h3>Toaster Lo-fi Wireframe</h3>
-            <p>Another result of DGL-111, this was more like homework but I've run out of projects.</p>
-            <p>I believe we were leading into user testing? I'm not sure I remember exactly. It was fun making the toaster interface however.</p>
-          </section>
-          <!-- End of Project block. -->
-          <!-- Start of Project block -->
-          <section class="project-item">
-            <img src="images/funnyCat.gif" alt="A cat standing on a table, dancing after eating fish.">
-            <h3>Project Distraction</h3>
-            <p>The scope of this project is to distract you from noticing I ran out of projects with a dancing cat. Look at him and how incredibly happy he is. </p>
-
-
-            <!-- ************** MY ATTEMPT AT A MODAL ******************
-            I watched a youtube video called "Pure CSS modal box tutorial" by Desi Developer to learn how it was done. Ref video: https://www.youtube.com/watch?v=8AUtM5lqUZM -->
-            <a href="#modal_container" class="modal_open">More Distractions</a>
-
-            <div class="modal_container" id="modal_container">
-              <div class="modal_content">
-                <a href="#" class="modal_close">&times;</a>
-                <h2 class="modal_heading">More Cat Distractions</h2>
-                <div class="modal_paragraph">The internet loves cats and I needed something for my modal, so here we are. Anyway, did you know that meows are not cat language? Cats developed them to communicate with humans!</div>
-                <img src="images/funnyCat2.gif" alt="a funny picture involving another cat">
-              </div>
-            </div>
-          </section>
-          <!-- End of Project block. -->
+      <a class="navbar-brand" href="#">
+          <img src="./img/user-astronaut-solid.svg" alt="logo link to top of page"></a>
+  
+      <button type="button"
+              class="navbar-toggler"
+              data-toggle="collapse"
+              data-target="#myTogglerNav"
+              aria-controls="#myTogglerNav"
+              aria-label="Toggle Navigation">
+              <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <section class="collapse navbar-collapse" id="myTogglerNav">
+        <div class="navbar-nav ml-auto">
+          <a class="nav-item nav-link text-nowrap" href="#projects">Featured Projects</a>
+          <a class="nav-item nav-link text-nowrap" href="#workexperience">Work Experience</a>
+          <a class="nav-item nav-link text-nowrap" href="#education">Education</a>
+          <a class="nav-item nav-link text-nowrap" href="#footer">Contact</a>
         </div>
       </section>
+  
+    </div>
+  </nav><!-- End of Nav-->
 
-      <!-- ***********************  WORK EXPERIENCE  *********************** -->
-      <section class="work-experience" id="work-experience">
-        <div class="content-wrap item-details divider">
-          <h2>Work Experience</h2>
-          <!-- Copy this whole <section> block to add more jobs. -->
-          <section class="job-item">
-            <div class="job-details">
-              <h3>Armament Shop Jr Supervisor</h3>
-              <p>407 (LRP) Squadron - Royal Canadian Air Force</p>
-              <p>May 2018 - Sept 2019</p>
+
+
+<!-- #region JUMBOTRON -->
+<div class="main">
+
+    <section id="jumbotron" class="jcontainer">
+
+        <div class="jumbotron-grid">
+            <div class="bio">
+
+                <h1>Reginald McPherson</h1>
+
+                <h3>Web Developer / Student</h3>
+
+                <p>I am currently a student of North Island College working towards my Web & Mobile Application Development diploma with the goal of starting a new career as a developer. In Sept 2019 I honorably retired from the military after 18 years with the intention of attending college in pursuit of becoming a developer..</p>
+
+                <button
+                    type="button"
+                    class="btn "
+                    data-toggle="modal"
+                    data-target="#servicesmodal">
+                    Say hi!
+                </button>
+
             </div>
-            <div class="job-summary">
-              <p>Primary responsibilities:</p>
-              <ul>
-                <li>Shop personnel supervisor - 2nd line maintenance.</li>
-                <li>Inspect, maintain, and repair armament related aircraft equipment.</li>
-                <li>Torpedo and SKAD Load Crew Chief</li>
-                <li>Schedule monthly training for load crew members to maintain load qualifications</li>
-                <li>Prepare and maintain aircraft forms and statistical data.</li>
-                <li>More details available upon request.</li>
-              </ul>
-            </div>
-          </section>
-          <!-- End of Job block. -->
-          <!-- Copy this whole <section> block to add more jobs. -->
-          <section class="job-item">
-            <div class="job-details">
-              <h3>CP140 AWS Jr Supervisor</h3>
-              <p>407 (LRP) Squadron - Royal Canadian Air Force</p>
-              <p>Sept 2017 - May 2018</p>
-            </div>
-            <div class="job-summary">
-              <p>Primary responsibilities:</p>
-              <ul>
-                <li>Air Weapons Systems personnel supervisor - 1st line maintenance.</li>
-                <li>Evaluating and developing subordinates through performance monitoring and one-on-one feedback sessions to discuss areas of strength and identify areas of improvement together.</li>
-                <li>Coordinate, delegate, and perform aircraft servicing and maintenance.</li>
-                <li>Ensure all maintenance and documentation meets aviation safety and quality standards including DND/CAF AF9000 Airworthiness Program.</li>
-                <li>More details available upon request.</li>
-              </ul>
-            </div>
-          </section>
-          <!-- End of Job block. -->
-          <!-- Copy this whole <section> block to add more jobs. -->
-          <section class="job-item">
-            <div class="job-details">
-              <h3>Explosive Storage Area Jr Supervisor</h3>
-              <p>19 AMS Squadron - Royal Canadian Air Force</p>
-              <p>Apr 2016 - Sept 2017</p>
-            </div>
-            <div class="job-summary">
-              <p>Primary responsibilities:</p>
-              <ul>
-                <li>Coordination of warehousing activities and personnel.</li>
-                <li>Handle administrative, logistical, and disciplinary needs of personnel.</li>
-                <li>Managed and distributed all security access codes</li>
-                <li>Carry out routine safety inspections of facilitiesEnsure all maintenance and documentation meets aviation safety and quality standards including DND/CAF AF9000 Airworthiness Program.</li>
-                <li>Including all prior responsibilities to promotion</li>
-                <li>More details available upon request.</li>
-              </ul>
-            </div>
-          </section>
-          <!-- End of Job block. -->
-          <!-- Copy this whole <section> block to add more jobs. -->
-          <section class="job-item">
-            <div class="job-details">
-              <h3>Explosives Storage and Handling Specialist</h3>
-              <p>19 AMS Squadron - Royal Canadian Air Force</p>
-              <p>Apr 2011 - Apr 2016</p>
-            </div>
-            <div class="job-summary">
-              <p>Primary responsibilities:</p>
-              <ul>
-                <li>Inventory management and Life cycle management of controlled goods.</li>
-                <li>Track, label, package, ship, receive, and safely store distribute Class 1 Dangerous goods in a highly secured warehousing facility.</li>
-                <li>Use of inventory management software to track and update SCA allotments, issues, returns, or movement of items between accounts.</li>
-                <li>Use of warehousing equipment such as forklifts and bridge cranes</li>
-                <li>Member of Explosive Ordinance Disposal team</li>
-                <li>More details available upon request</li>
-              </ul>
-            </div>
-          </section>
-            <!-- End of Job block. -->
         </div>
-      </section>
 
-      <!-- ******************  EDUCATION & CERTIFICATIONS ****************** -->
-      <section class="education" id="education">
-        <div class="content-wrap item-details">
-          <h2>Education</h2>
+    </section>
+<!-- #endregion -->
 
-          <!-- Copy this whole <section> block to add more schools. -->
-          <section>
-            <h3>North Island College</h3>
-            <p>Sept 2020 - Present (Est complete Apr 2023)</p>
-            <p>Web and Mobile Application development diploma (In Progress 42/60 credits)</p>
-          </section>
-          <section>
-            <h3>Canadian Forces Leadership and Recruit School</h3>
-            <p>Jan 2016 - Mar 2016</p>
-            <p>Primary Leadership Qualification</p>
-          </section>
-          <section>
-            <h3>Canadian Forces School of Aerospace Technology and Engineering</h3>
-            <p>Feb 2007 - Jul 2008</p>
-            <p>Apprentice Aviation Systems Technician certificate</p>
-          </section>
+<div class="modal fade text-black-50" id="servicesmodal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h3 class="modal-title">Drop me a line?</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div><!--modal-header-->
+
+            <div class="modal-body">
+                <p>I'm a simple guy who likes complicated things</p>
+                <form method="post" action="#">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea class="form-control" id="message" rows="3"></textarea>
+                    </div>
+            </div><!--modal-body-->
+
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Back</button>
+            </div>
+        </div><!--modal-content-->
+    </div><!--modal-dialog-->
+</div><!--modal-->
 
 
 
-          <!-- End of School block. -->
+<!-- #region PROJECTS -->
+
+<section id="projects">
+    <h2>Featured Projects</h2>
+    <p>View some completely fabricated projects below. I don't really have any projects for this section, but I'm filling this in because so I'm not hung up on it anymore. More information be derived from the URL: fakeprojects.com.</p>
+
+    <div class="cardgroup">
+
+        <div class="card">
+            <img src="./images/petadoptionapp.png" alt="Pet adoption app" >
+            <div class="container">
+                <h4><b>Pet Adoption Mobile App</b></h4>
+                <p>Created as part of DGL-111, covering topics like user testing, user personas, problem solving, wireframes and mock ups.</p>
+            </div>
         </div>
-      </section>
-      
-      <!-- *****************  CONTACT INFO / SOCIAL MEDIA  ***************** -->
-      <footer id="contact">
-        <div class="content-wrap" >
-          <h2>Let's Keep in Touch!</h2>
-          <!-- Social media and contact links. Add or remove any networks. -->
-          <ul class="contact-list">
-            <li><a href="mailto:rmcpherson@northislandcollege.ca">rmcpherson@northislandcollege.ca</a></li>
-            <li><a href="https://www.facebook.com/reginald.mcpherson.39" target="_blank">Facebook</a></li>
-            <li><a href="https://www.linkedin.com/in/reginald-mcpherson-86a2371b7/" target="_blank">Linkedin</a></li>
+
+        <div class="card">
+            <img src="./images/lhh.png" alt="Daycare front page" >
+            <div class="container">
+                <h4><b>Daycare Website</b></h4>
+                <p>Created as part of DGL-113, this page featuring HTML5 Canvas and Javascript for the bubbles and a basic image carosal.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="./images/ToasterHeroshot2.png" alt="Toaster lo-fi wireframe" >
+            <div class="container">
+                <h4><b>Lo-Fi Toaster Design</b></h4>
+                <p>I believe we were leading into user testing? I'm not sure I remember exactly. It was fun making the toaster interface however.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- #endregion -->
+
+<!-- #region ANIMATIONS -->
+<section id="animations">
+    <h2>Animations</h2>
+    <p>Here are a few examples of some animations I created during my studies</p>
+    <div class="animation-grid">
+        
+            <div class="anim_01">
+                <h2>
+                    <span>Q</span>
+                    <span>S</span>
+                    <span>-</span>
+                    <span>T</span>
+                    <span>A</span>
+                    <span>N</span>
+                    <span>K</span>
+                    <span>S</span>
+                </h2>
+            </div>
+        
+
+        <div class="anim_02">
+            <div class="fastCloud"></div>
+            <div class="slowCloud"></div>
+        </div>
+        <div class="anim_03">
+			<img src="./images/myFace01.svg" alt="Face of student eginald McPherson"><br>
+		</div>
+    </div>
+</section>
+<!-- #endregion -->
+
+
+<!-- #region SKILLS -->
+<section id="skills">
+
+    <h2>Featured Skills</h2>
+
+    <div class="skillbox">
+        <div class="dev-skills">
+            <div class="skill skill--1">
+                <img src="./images/icon_html5.svg" alt="html 5">
+                <label for="file">HTML5:</label>
+                <div class="progress"><div class="progress__bar"></div></div>
+            </div>
+            <div class="skill skill--2">
+                <img src="./images/icon_css3.svg" alt="CSS3">
+                <label for="file">CSS3:</label>
+                <div class="progress"><div class="progress__bar"></div></div>
+            </div>
+            <div class="skill skill--3">
+                <img src="./images/icon_js.svg" alt="Javascript">
+                <label for="file">Javascript:</label>
+                <div class="progress"><div class="progress__bar"></div></div>
+            </div>
+            <div class="skill skill--4">
+                <img src="./images/icon_php.svg" alt="html 5">
+                <label for="file">PHP:</label>
+                <div class="progress"><div class="progress__bar"></div></div>
+            </div>
+            <div class="skill skill--5">
+                <img src="./images/icon_html5.svg" alt="html 5">
+                <label for="file">Bootstrap:</label>
+                <div class="progress"><div class="progress__bar"></div></div>
+            </div>
+        </div>
+
+        <div class="other-skills">
+            <div class="skill skill--6">
+                <img src="./images/icon_photoshop.svg" alt="html 5">
+                <label for="file">Photoshop:</label>
+                <div class="progress"><div class="progress__bar"></div></div>
+            </div>
+            <div class="skill skill--7">
+                <img src="./images/icon_illustrator.svg" alt="html 5">
+                <label for="file">Illustrator:</label>
+                <div class="progress"><div class="progress__bar"></div></div>
+            </div>
+            <div class="skill skill--8">
+                <img src="./images/icon_Xd.svg" alt="html 5">
+                <label for="file">Adobe XD:</label>
+                <div class="progress"><div class="progress__bar"></div></div>
+            </div>
+            <div class="skill skill--9">
+                <img src="./images/icon_figma2.svg" alt="html 5">
+                <label for="file">Figma:</label>
+                <div class="progress"><div class="progress__bar"></div></div>
+            </div>
+            <div class="skill skill--10">
+                <img src="./images/icon_guy.svg" alt="html 5">
+                <label for="file">Bomb Squad:</label>
+                <div class="progress"><div class="progress__bar"></div></div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</section>
+<!-- #endregion -->
+
+<!-- #region WORK EXPERIENCE -->
+<section class="bg-secondary py-4 text-light" id="workexperience">
+    <div class="container">
+      <h2 class="pb-5 text-center">Work Experience</h2>
+
+      <div class="row row-cols-2">
+        <div class="col ">
+          <h5>Air Weapons Shop Supervisor</h5>
+          <p class="font-italic">Royal Canadian Air Force</p>
+          <p class="font-italic">2002 - 2019</p>
+        </div>
+        <div class="col">
+          <p>Air Weapons Systems Technicians maintain aircraft air weapons systems. They also perform explosives storage and handling, and provide Explosive Ordnance Disposal duties for the Air Force.</p>
+          <ul>
+            <li>Test, inspect and repair Air Weapon Systems</li>
+            <li>Perform quality assurance checks on Air Weapons and related systems</li>
+            <li>Prepare and maintain aircraft forms and statistical data</li>
+            <li>Perform aircraft handling tasks</li>
           </ul>
         </div>
-      </footer>
-    </main>
-  </body>
-</html>
+      </div><!--row-->
+
+      <div class="row row-cols-2">
+        <div class="col">
+          <h5>X-Area/Explosive Storage Compound Supervisor</h5>
+          <p class="font-italic">Royal Canadian Air Force</p>
+          <p class="font-italic">2002 - 2019</p>
+        </div><!--col-->
+    
+        <div class="col text-left">
+          <p>Air Weapons Systems Technicians maintain aircraft air weapons systems. They also perform explosives storage and handling, and provide Explosive Ordnance Disposal duties for the Air Force.</p>
+          <ul>
+            <li>Supervise operations a secured explosive storage facility</li>
+            <li>Prepare, transport, ship, and recieve class 1 dangerous goods </li>
+            <li>Warehousing operations</li>
+            <li>Manage and secure sensitive information</li>
+          </ul>
+        </div><!--col-->
+      </div><!--row-->
+    </div>
+    </section><!-- End of Work Experience -->
+<!-- #endregion -->
+
+    <!-- #region EDUCATION -->
+<section class="pt-4" id="education">
+	<div class="container">
+		<button type="button" class="mb-4 btn w-100" data-toggle="collapse" data-target="#educationcollapse"><h2>Education</h2></button>
+		<section class="collapse" id="educationcollapse">
+			<p><strong>North Island College</strong></p>
+			<p class="font-italic">Web and Mobile Application development diploma (In Progress)</p><br>
+			<p><strong>Canadian Forces Leadership and Recruit School</strong></p>
+			<p class="font-italic">Leadership training</p><br>
+			<p><strong>Canadian Forces School of Aerospace Technology and Engineering</strong></p>
+			<p class="font-italic">Aviation Systems</p><br>
+		</section>
+
+	</div>
+</section>
+<!-- #endregion -->
+
+
+</div> <!-- End of div.main -->
+
+<script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<script>
+	$(function () {
+		$('[data-toggle="popover"]').popover();
+	})
+</script>
+
+<footer class="py-4" id="footer">
+    <div class="container">
+    
+        <h1 class="text-center py-4 text-white-50">Let's Keep in Touch!</h1>
+    
+        <div class="row" style="height: 52px">
+    
+            <div class="d-flex w-100 text-center">
+    
+                <!--EMAIL ADDRESS-->
+                <div class="col">
+                    <a class="text-decoration-none text-white" href="mailto:rmcpherson@northislandcollege.ca">
+                        <img style="max-width: 42px;"  src="./images/icon_email.svg" alt="Email address">
+                        <span class="px-2 h5">Email</span>
+                    </a>
+                </div><!--col-->
+    
+                <!--FACEBOOK-->
+                <div class="col">
+                    <a class="text-decoration-none text-white" href="https://www.facebook.com/reginald.mcpherson.39" target="_blank">
+                        <img style="max-width: 42px;"  src="./images/icon_fb.svg" alt="Facebook adress">
+                        <span class="px-2 h5">Facebook</span>
+                    </a>
+                </div><!--col-->
+            </div>
+    
+        </div>
+        
+    
+    
+    </div>
+    </footer>
+</body>

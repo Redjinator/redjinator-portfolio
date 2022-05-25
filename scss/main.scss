@@ -1,0 +1,351 @@
+/*
+    Student:    Reginald McPherson
+    Course:     DGL-203 Adv. CSS
+    Modified:   07 Dec, 2021
+    Purpose:    Part of Assignment 4C
+*/
+
+@use './variables' as v;
+@use './resets';
+@use './mixins';
+@use './animations' as a;
+
+/* #region :root & body ============================= */
+:root {
+    font-size: 16px;
+    font-family: 'Open Sans';
+  }
+
+body {
+    color: black;
+    background-color: white;
+
+    &::-webkit-scrollbar {
+        width: 0.25rem;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #1e1e24;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: #6649b8;
+    }
+}
+
+
+
+section {
+    padding: 2rem;
+    text-align: center;
+
+    & h2 {
+        margin-bottom: 1rem;
+    }
+
+    & p {
+        padding: 1rem 0;
+    }
+}
+
+
+
+// JUMBOTRON SECTION
+//====================================================
+#jumbotron {
+    height: 50vh;
+    background: url('../images/salinero-unsplash.jpg') no-repeat left;
+    background-size: cover;
+
+    color: v.$text-secondary;
+    overflow: hidden;
+
+    .jumbotron-grid {
+        display: grid;
+        gap: 1rem;
+        height: 100%;
+        grid-template-columns: minmax(240px, 1fr);
+
+        & h1 {
+            @include mixins.gradient-text(red, blue);
+            font-size: 2.6rem;
+        }
+
+        & .bio {
+            @include mixins.flex-center(column);
+        }
+
+        & p {
+            width: 50%;
+            text-align: left;
+        }
+    }
+
+    .btn {
+        @include mixins.btn(v.$accent-primary, v.$accent-secondary, white);
+    }
+
+}
+
+
+// PROJECTS SECTION
+//====================================================
+#projects {
+    background-color: v.$bg-tertiary;
+
+    &>p {
+        text-align: left;
+        margin-bottom: 1rem;
+    }
+
+    & .cardgroup {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        & .card {
+            @include mixins.gradient-bg(blue, red);
+            filter: grayscale(20%);
+            color: v.$text-secondary;
+            margin: 1rem;
+            border-radius: 5px; 
+            border: solid 2px black;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            transition: 0.3s;
+
+            &:hover {
+                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.6);
+            }
+
+            & img {
+                width: 100%;
+                border-radius: 5px 5px 0 0;
+                border: solid 2px v.$accent-primary;
+                margin-bottom: 1rem;
+            }
+
+            & .container {
+                padding: 0 1rem;
+            }
+        }
+    }
+}
+
+
+// ANIMATION SECTION
+//====================================================
+#animations {
+    height: 50vh;
+    @include mixins.gradient-bg(grey, white);
+
+    .animation-grid {
+        display: flex;
+        justify-content: space-evenly;
+
+        // Animation #1
+        .anim_01 {
+            font-size: 2rem;
+            perspective: 500px;
+            transform-style: preserve-3d;
+
+            // Loops through and create delays
+            & h2>span {
+                @include a.speedflip;
+                @include a.increment-delays();
+            }
+        }
+
+        // Animation #2
+        .anim_02 {
+            & .fastCloud {
+                @include a.addcloud(10rem, 5s);
+            }
+            & .slowCloud {
+                @include a.addcloud(8rem, 2s);
+            }
+        }
+
+        // Animation #3
+        .anim_03 {
+            @include a.back_n_forth;
+        }
+    }
+}
+
+
+
+// WORK EXPERIENCE SECTION
+//====================================================
+#workexperience {
+    text-align: left;
+    background: url('../images/tire_cropped.png') no-repeat left;
+    background-size: cover;
+}
+
+
+
+// EDUCATION SECTION
+//====================================================
+#education {
+    .btn {
+        @include mixins.btn(v.$accent-primary, v.$accent-secondary, white);
+    }
+}
+
+
+// SKILLS SECTION
+//====================================================
+#skills {
+    @include mixins.gradient-bg(v.$accent-primary, v.$accent-secondary);
+    height: 50vh;
+    color: white;
+
+    .skillbox {
+        display: flex;
+        width: 100%;
+        height: 70%;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .dev-skills, .other-skills{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        width: 50%;
+    }
+
+    .skill {
+        display: flex;
+        width: 100%;
+        height: 1rem;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: 0.9rem;
+
+        & label {
+            font-size: 1.2rem;
+            width: 25%;
+            margin-right: 1rem;
+        }
+
+        & img {
+            width: 40px;
+        }
+
+        // Progress bars---------------------------------
+        &--1 {
+            @extend .skill;
+            @include mixins.set-progressbar(orange, 80%);
+        }
+        &--2 {
+            @extend .skill;
+            @include mixins.set-progressbar(aqua, 70%);
+        }
+        &--3 {
+            @extend .skill;
+            @include mixins.set-progressbar(yellow, 65%);
+        }
+        &--4 {
+            @extend .skill;
+            @include mixins.set-progressbar(purple, 70%);
+        }
+        &--5 {
+            @extend .skill;
+            @include mixins.set-progressbar(green, 75%);
+        }
+        &--6 {
+            @extend .skill;
+            @include mixins.set-progressbar(orange, 75%);
+        }
+        &--7 {
+            @extend .skill;
+            @include mixins.set-progressbar(aqua, 70%);
+        }
+        &--8 {
+            @extend .skill;
+            @include mixins.set-progressbar(yellow, 56%);
+        }
+        &--9 {
+            @extend .skill;
+            @include mixins.set-progressbar(purple, 70%);
+        }
+        &--10 {
+            @extend .skill;
+            @include mixins.set-progressbar(grey, 100%);
+        }
+    }
+}
+/* #endregion */
+
+
+
+// FOOTER SECTION
+//====================================================
+#footer {
+    @include mixins.gradient-bg(blue, red);
+}
+
+// SMALL SCREEN SIZES
+//====================================================
+@media only screen and (max-width: 768px) {
+
+    .main {
+        margin-left: 0;
+    }
+
+    #jumbotron {
+        .jumbotron-grid {
+            display: flex;
+            height: 100%;
+
+            & h1 {
+                font-size: 2rem;
+            }
+
+            & .bio {
+                height: 100%;
+                @include mixins.flex-center(column);
+            }
+
+            & p { // not doing anyting. Bug, fix later
+                width: 100%;
+                font-size: 0.8rem;
+                margin: 1rem 0;
+            }
+        }
+    }
+
+    #projects {
+        .cardgroup {
+            flex-direction: column;
+        }
+    }
+
+    #animations {
+        height: 70vh;
+        .animation-grid {
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+        }
+    }
+
+    #skills {
+        height: 60vh;
+        .skillbox {
+            flex-direction: column;
+
+            .dev-skills, .other-skills {
+                width: 100%;
+                height: 100%;
+                justify-content: space-evenly;
+            }
+
+            .progress {
+                max-width: 100vw;
+            }
+        }
+    }
+}
